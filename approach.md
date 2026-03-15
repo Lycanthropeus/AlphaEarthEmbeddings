@@ -16,6 +16,8 @@ Simple averaging of all the patches within a port will throw away too much infor
 
 ## Approach
 
-Describe execution of `build_group_descriptors`
+`patch_group_descriptors`: Takes all patch embeddings inside one part and summarises them into one vector for that part (weighted equally). Computes mean direction, concentration, standard deviation and histogram, and return these four concatenated together.
 
+`build_group_descriptors` - Runs the above for each part. (In the toy dataset, this is six)
 
+`aggregate` - Aggregate each of the part descriptors into one vector for one port. (In the toy dataset, this is two)
